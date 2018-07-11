@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+
+        {{--     <div class="card">
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
@@ -13,9 +11,20 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
                 </div>
+            </div> --}}
+            <div class="row">
+                @foreach($subjects as $subject)
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3>{{ $subject->name }}</h3>
+                                <hr/>
+                                <a href="/subject/{{ $subject->id }}" class="btn btn-primary">Show me this Deck!!</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

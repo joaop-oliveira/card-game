@@ -31,9 +31,7 @@ $factory->define(App\Subject::class, function (Faker $faker) {
 
 $factory->define(App\Deck::class, function (Faker $faker) {
     return [
-        'user_id' => function () {
-            return factory(App\User::class)->create()->id;
-        },
+        'user_id' => '261',
         'subject_id' => function () {
             return factory(App\Subject::class)->create()->id;
         },
@@ -53,9 +51,7 @@ $factory->define(App\Card::class, function (Faker $faker) {
 
 $factory->define(App\Score::class, function (Faker $faker) {
     return [
-       'user_id' => function () {
-           return factory(App\User::class)->create()->id;
-       },
+       'user_id' => '261',
         'points' => $faker->numberBetween(1, 100),
         'time_spent' => $faker->time('i:s'),
     ];
